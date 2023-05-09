@@ -12,17 +12,19 @@ def index():
 @app.route("/add", methods=["POST"])
 def add():
     task = request.form.get("task")
+    priority = request.form.get("priority")  # Get the priority from the form
     if not task:
         flash("Please enter a task")
         return redirect(url_for("index"))
-    tasks.append(task)
+    tasks.append({"task": task, "priority": priority})  # Store the task and priority as a dictionary
     flash("Task added successfully")
     return redirect(url_for("index"))
 
 @app.route("/remove", methods=["POST"])
 def remove():
     task = request.form.get("task")
-    tasks.remove(task)
+    task_to_remove = next(t for t in tasks if t["task"] == task)  # Find the task dictionary with the matching task
+    tasks.remove(task_to_remove)
     flash("Task removed successfully")
     return redirect(url_for("index"))
 
