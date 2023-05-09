@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: todo-app
-        image: dslate88/todo-app:v1
+        image: dslate88/todo-app:add_priority
         ports:
         - containerPort: 8000
