@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: todo-app
-        image: dslate88/todo-app
+        image: dslate88/todo-app:v1
         ports:
         - containerPort: 8000
