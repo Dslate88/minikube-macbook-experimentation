@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: todo-app
-        image: docker.io/library/todo-app:latest # NOTE: acquired from minikube image ls, after minikube image load todo-app
+        image: dslate88/todo-app
         ports:
         - containerPort: 8000
